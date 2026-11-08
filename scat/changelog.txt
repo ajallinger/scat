@@ -1,0 +1,92 @@
+************************************************************************
+30 Jul 2023
+Merging in GLOM is done in order of least increase to sum-of-squares 
+instead of least increase in variance.
+
+************************************************************************
+5 Sep 2022
+Fallback interpretation of brightness is done in linear light.
+
+************************************************************************
+3 Apr 2022
+Average pitch in SCRIBE splits the difference between LEAST and GREAT.
+
+************************************************************************
+12 Feb 2022
+The returned BOUND array in C version of GLOM is now zero-offset.
+zerora.c renamed solv.c -- it has a void pointer to allow
+arbitrary arguments to be passed to the function to be solved,
+and returns zero on success.
+
+************************************************************************
+27 Jan 2022
+Change main loop in GLOM to a while loop.  GLOM now supports a
+predetermined number of segments.  Change average difference
+parameter to 1.0 and maximum difference parameter to 2.0
+
+************************************************************************
+23 Jan 2022
+Build heaps in GLOM starting from the middle, as per Floyd.
+Change order of merging from smallest average difference to
+smallest increase in variance.
+
+************************************************************************
+22 Jan 2022
+Change memory allocation in C to match the size of the input.
+
+************************************************************************
+16 Jan 2022
+Delete Butterworth filter from SCRIBE.  Translation of National
+Bureau of Standards ZEROIN for solving the de-interpolation
+replaces SOLVR.  Translation of Naval Surface Weapons Center
+ISHELL replaces QSORTI and IORDER.  Added IBSLE to complete the
+set of search routines.
+
+************************************************************************
+5 Jan 2022
+New subroutine SMOOTH for removing outliers replaces AVE3.
+Butterworth filter replaces 13-point moving average.
+
+************************************************************************
+December 2021
+Add de-interpolation by solving for the inverse of the Lanczos kernel.
+Change window function to Nuttall.
+
+************************************************************************
+November 2021
+Restore filter.  Move dynamic programming into separate subroutine.
+
+************************************************************************
+August 2021 - Delete bandpass filter.  Switch to a custom window function.
+C translation.
+
+************************************************************************
+2021 - Rewrite for transcription of monophony only.  Dropped data clustering.
+New subroutine GLOM for greedy agglomeration of segments.  Viterbi pass
+replaces the rule-based defluttering step.  New subroutines QWM, MOAV13,
+for robust averages and smoothing.
+Redesigned Fourier transform with one transform band per semitone.  Eliminate
+the precomputed transform sizes.  New subroutine HOBAND provieds a high-order
+Butterworth prefilter on the input.  New subroutine RWAVMO reads .wav files.
+No longer limited to a particular sample rate or bit size of input.
+Added support for PNM file types P2, P3, and P5.
+
+************************************************************************
+15 Sept 2019 - Instantaneous Frequency algorithm.  Lanczos interpolation
+replaces splines.  Plain RGB color.  Improved Blackman window.
+
+************************************************************************
+18 Aug 2019 - Transform coefficients are divided by N'.  Equripple Hamming
+window.  YIQ color model.  Evaluating, rather than integrating the spline.
+
+************************************************************************
+Early 2019 - First complete version of the partially automatic transcription
+system.  Audio -> graphics followed by graphics -> MIDI.
+
+************************************************************************
+2017 - Data clustering subroutine.
+
+************************************************************************
+April 2016 - Original spectrogram program.
+
+************************************************************************
